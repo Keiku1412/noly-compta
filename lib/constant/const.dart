@@ -9,7 +9,7 @@ var noly_background = Container(
   ),
 );
 var noly_logo = Container(
-  height: 165,
+  height: 185,
   decoration: const BoxDecoration(
     image: DecorationImage(
       image: AssetImage(

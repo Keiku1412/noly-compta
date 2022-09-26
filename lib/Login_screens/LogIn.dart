@@ -9,24 +9,27 @@ class Login_page1 extends StatefulWidget {
   State<Login_page1> createState() => _Login_page1State();
 }
 
+// ignore: camel_case_types
 class _Login_page1State extends State<Login_page1> {
   Widget _textConnection() {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 45),
-          height: 48,
-          child: Text(
+          margin: const EdgeInsets.only(top: 25),
+          child: const Text(
             "Connexion",
-            style: TextStyle(fontSize: 39),
+            style: TextStyle(
+              fontSize: 39,
+              fontFamily: 'DemiBold',
+            ),
           ),
         ),
         Container(
-          height: 15,
           child: Text(
             "Entrez votre email et votre mot de passe pour accéder à votre compte Noly",
             style: TextStyle(
               fontSize: 10,
+              fontFamily: 'Regular',
               color: Color(0xffB0B0B0),
             ),
           ),
@@ -37,14 +40,16 @@ class _Login_page1State extends State<Login_page1> {
 
   Widget _textCreeCompt() {
     return Container(
-      margin: const EdgeInsets.only(top: 15),
-      height: 30,
+      margin: const EdgeInsets.only(top: 22),
       child: RichText(
         text: TextSpan(children: [
           TextSpan(
               text: 'Créez un compte',
               style: TextStyle(
+                fontSize: 13,
                 color: Color(0xff54BAAA),
+                fontFamily: 'Medium',
+                decoration: TextDecoration.underline,
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {

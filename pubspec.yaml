@@ -30,3 +30,16 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+
+  fonts:
+    - family: DemiBold
+      fonts:
+      - asset: assets/fonts/DemiBold.ttf
+
+    - family: Medium
+      fonts:
+      - asset: assets/fonts/Medium.ttf
+
+    - family: Regular
+      fonts:
+      - asset: assets/fonts/Regular.ttf
