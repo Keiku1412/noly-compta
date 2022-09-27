@@ -12,7 +12,7 @@ class Login_page1 extends StatefulWidget {
 
 // ignore: camel_case_types
 class _Login_page1State extends State<Login_page1> {
-  Widget _textConnection() {
+  Widget _buildTextConnection() {
     return Column(
       children: [
         Container(
@@ -38,7 +38,7 @@ class _Login_page1State extends State<Login_page1> {
     );
   }
 
-  Widget _textCreeCompt() {
+  Widget _buildTextCreatAccount() {
     return Container(
       child: RichText(
         text: TextSpan(children: [
@@ -52,7 +52,7 @@ class _Login_page1State extends State<Login_page1> {
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  print('Créez un compte Clicked');
+                  print('Create an Account Clicked');
                 }),
         ]),
       ),
@@ -129,6 +129,52 @@ class _Login_page1State extends State<Login_page1> {
     );
   }
 
+  Widget _buildConnectButton() {
+    return SizedBox(
+      height: 44.5,
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Text(
+          'Se connecter',
+          style: TextStyle(
+            fontSize: 16,
+            fontFamily: 'DemiBold',
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          foregroundColor: Colors.white,
+          backgroundColor: Color(0xff55BBA8),
+          elevation: 15,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25), // <-- Radius
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTextForgetPassword() {
+    return Container(
+      child: RichText(
+        text: TextSpan(children: [
+          TextSpan(
+              text: 'Mot de passe oublié ?',
+              style: TextStyle(
+                fontSize: 10,
+                color: Color(0xff4DB1D9),
+                fontFamily: 'Medium',
+                decoration: TextDecoration.underline,
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  print('Forget password Clicked');
+                }),
+        ]),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,32 +182,63 @@ class _Login_page1State extends State<Login_page1> {
         child: Stack(
           children: [
             noly_background,
-            Padding(
-              padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    noly_logo,
-                    SizedBox(
-                      height: 25,
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  noly_logo,
+                  SizedBox(
+                    height: 26,
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
+                      child: _buildTextConnection()),
+                  SizedBox(
+                    height: 22,
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
+                      child: _buildTextCreatAccount()),
+                  SizedBox(
+                    height: 81,
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
+                      child: _buildEmailTF()),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
+                      child: _buildPasswordlTF()),
+                  SizedBox(
+                    height: 47,
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
+                      child: _buildConnectButton()),
+                  SizedBox(
+                    height: 43,
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
+                      child: _buildTextForgetPassword()),
+                  Positioned(
+                    child: Container(
+                      alignment: Alignment.bottomLeft,
+                      height: 220,
+                      width: 220,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/images/cloud_bg.png",
+                          ),
+                        ),
+                      ),
                     ),
-                    _textConnection(),
-                    SizedBox(
-                      height: 22,
-                    ),
-                    _textCreeCompt(),
-                    SizedBox(
-                      height: 81,
-                    ),
-                    _buildEmailTF(),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    _buildPasswordlTF(),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -9,16 +9,20 @@ var noly_background = Container(
     ),
   ),
 );
-var noly_logo = Container(
-  height: 185,
-  decoration: const BoxDecoration(
-    image: DecorationImage(
-      image: AssetImage(
-        'assets/images/noly_logo.png',
+var noly_logo = Stack(
+  children: [
+    Container(
+      height: 185,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            'assets/images/noly_logo.png',
+          ),
+          scale: 1.10,
+        ),
       ),
-      scale: 1.10,
     ),
-  ),
+  ],
 );
 var text_field_innershadow = NeumorphicStyle(
   boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(55)),
