@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:nolycompta/Screens/Create_Account/CreateAcount.dart';
 
 import 'package:nolycompta/constant/const.dart';
 
@@ -18,7 +19,7 @@ class _LoginState extends State<Login> {
   //noly upper logo
   Widget _buildnolylogo(BuildContext context) {
     return Container(
-      height: (MediaQuery.of(context).size.height / 5),
+      height: (MediaQuery.of(context).size.height / 4.7),
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
@@ -78,6 +79,11 @@ class _LoginState extends State<Login> {
                 ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Create_Account1()),
+                    );
                     print('Create an Account Clicked');
                   }),
           ]),
@@ -262,7 +268,7 @@ class _LoginState extends State<Login> {
                 children: [
                   _buildnolylogo(context),
                   SizedBox(
-                    height: (MediaQuery.of(context).size.height / 19),
+                    height: (MediaQuery.of(context).size.height / 27),
                     width: 26,
                   ),
                   _buildTextHeadline(),

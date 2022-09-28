@@ -15,7 +15,7 @@ class _Password_Verification extends State<Password_Verification> {
   //noly upper logo
   Widget _buildnolylogo(BuildContext context) {
     return Container(
-      height: (MediaQuery.of(context).size.height / 5),
+      height: (MediaQuery.of(context).size.height / 4.7),
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
