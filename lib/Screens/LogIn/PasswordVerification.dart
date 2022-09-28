@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:nolycompta/constant/const.dart';
 
-class Login_page1 extends StatefulWidget {
-  const Login_page1({Key? key}) : super(key: key);
+class Password_Verification extends StatefulWidget {
+  const Password_Verification({Key? key}) : super(key: key);
 
   @override
-  State<Login_page1> createState() => _Login_page1State();
+  State<Password_Verification> createState() => _Password_Verification();
 }
 
 // ignore: camel_case_types
-class _Login_page1State extends State<Login_page1> {
+class _Password_Verification extends State<Password_Verification> {
   //noly upper logo
   Widget _buildnolylogo(BuildContext context) {
     return Container(
@@ -27,15 +27,15 @@ class _Login_page1State extends State<Login_page1> {
     );
   }
 
-//Text "CONNEXION entrez votre email et votre mot de passe etc"
-  Widget _buildTextConnection() {
+  Widget _buildHeadline() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
       child: Column(
         children: [
           Container(
             child: const Text(
-              "Connexion",
+              "Récupérer",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 39,
                 fontFamily: 'DemiBold',
@@ -44,12 +44,11 @@ class _Login_page1State extends State<Login_page1> {
           ),
           Container(
             child: Text(
-              "Entrez votre email et votre mot de passe pour accéder à votre compte Noly",
+              "mon mot de passe",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 14,
-                fontFamily: 'Regular',
-                color: Color(0xffB0B0B0),
+                fontSize: 39,
+                fontFamily: 'DemiBold',
               ),
             ),
           ),
@@ -58,39 +57,31 @@ class _Login_page1State extends State<Login_page1> {
     );
   }
 
-//Text "Creez un compt"
-  Widget _buildTextCreatAccount() {
+  Widget _buildsubline() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
       child: Container(
-        child: RichText(
-          text: TextSpan(children: [
-            TextSpan(
-                text: 'Créez un compte',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Color(0xff54BAAA),
-                  fontFamily: 'Medium',
-                  decoration: TextDecoration.underline,
-                ),
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    print('Create an Account Clicked');
-                  }),
-          ]),
+        child: const Text(
+          "Veuillez configurer votre nouveau mot de passe.",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Color(0xff55BBA8),
+            fontSize: 14,
+            fontFamily: 'Regular',
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildEmailTF() {
+  Widget _buildVerificationCodeTF() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'E-mail',
+            'Code de vérification',
             style: TextStyle(
               fontSize: 18,
               fontFamily: 'Medium',
@@ -105,13 +96,16 @@ class _Login_page1State extends State<Login_page1> {
             child: Neumorphic(
               style: text_field_innershadow,
               child: TextFormField(
+                textAlign: TextAlign.left,
                 decoration: InputDecoration(
                   isDense: true,
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 20),
+                  contentPadding: EdgeInsets.only(right: 22),
                   prefixIcon: Image.asset(
-                    'assets/images/E-mail.png',
-                    fit: BoxFit.fill,
+                    'assets/images/VCode.png',
+                    width: 50,
+                    height: 55,
+                    alignment: Alignment.centerLeft,
                   ),
                   focusedBorder: text_field_focused,
                   enabledBorder: text_field_unfocused,
@@ -131,7 +125,7 @@ class _Login_page1State extends State<Login_page1> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Mot de passe',
+            'Nouveau mot de passe',
             style: TextStyle(
               fontSize: 18,
               fontFamily: 'Medium',
@@ -146,13 +140,16 @@ class _Login_page1State extends State<Login_page1> {
             child: Neumorphic(
               style: text_field_innershadow,
               child: TextFormField(
+                obscureText: true,
                 decoration: InputDecoration(
                   isDense: true,
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 20),
+                  contentPadding: EdgeInsets.only(right: 22),
                   prefixIcon: Image.asset(
                     'assets/images/Password.png',
-                    fit: BoxFit.fill,
+                    width: 50,
+                    height: 55,
+                    alignment: Alignment.centerLeft,
                   ),
                   focusedBorder: text_field_focused,
                   enabledBorder: text_field_unfocused,
@@ -165,7 +162,51 @@ class _Login_page1State extends State<Login_page1> {
     );
   }
 
-  Widget _buildConnectButton() {
+  Widget _buildPasswordlVerificationTF() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Confirmez votre mot de passe',
+            style: TextStyle(
+              fontSize: 18,
+              fontFamily: 'Medium',
+            ),
+          ),
+          SizedBox(
+            height: 5,
+            width: 5,
+          ),
+          Container(
+            height: 44,
+            child: Neumorphic(
+              style: text_field_innershadow,
+              child: TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  isDense: true,
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(right: 22),
+                  prefixIcon: Image.asset(
+                    'assets/images/Password.png',
+                    width: 50,
+                    height: 55,
+                    alignment: Alignment.centerLeft,
+                  ),
+                  focusedBorder: text_field_focused,
+                  enabledBorder: text_field_unfocused,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildButton() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
       child: SizedBox(
@@ -174,7 +215,7 @@ class _Login_page1State extends State<Login_page1> {
         child: ElevatedButton(
           onPressed: () {},
           child: Text(
-            'Se connecter',
+            'Envoyer une confirmation',
             style: TextStyle(
               fontSize: 22,
               fontFamily: 'DemiBold',
@@ -193,30 +234,6 @@ class _Login_page1State extends State<Login_page1> {
     );
   }
 
-  Widget _buildTextForgetPassword() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
-      child: Container(
-        child: RichText(
-          text: TextSpan(children: [
-            TextSpan(
-                text: 'Mot de passe oublié ?',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Color(0xff4DB1D9),
-                  fontFamily: 'Medium',
-                  decoration: TextDecoration.underline,
-                ),
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    print('Forget password Clicked');
-                  }),
-          ]),
-        ),
-      ),
-    );
-  }
-
   Widget _buildBackgroundImage() {
     return Container(
       height: (MediaQuery.of(context).size.height / 6),
@@ -224,9 +241,8 @@ class _Login_page1State extends State<Login_page1> {
         image: DecorationImage(
           fit: BoxFit.none,
           alignment: FractionalOffset(
-            MediaQuery.of(context).size.width / -1000 +
-                MediaQuery.of(context).size.width / 99990,
-            MediaQuery.of(context).size.width / -1000,
+            -0.55,
+            -1.0,
           ),
           scale: 1,
           image: AssetImage(
@@ -249,40 +265,40 @@ class _Login_page1State extends State<Login_page1> {
                 children: [
                   _buildnolylogo(context),
                   SizedBox(
-                    height: (MediaQuery.of(context).size.height / 19),
+                    height: (MediaQuery.of(context).size.height / 28),
                     width: 26,
                   ),
-                  _buildTextConnection(),
+                  _buildHeadline(),
                   SizedBox(
-                    height: (MediaQuery.of(context).size.height / 50),
+                    height: (MediaQuery.of(context).size.height / 100),
                     width: 22,
                   ),
-                  _buildTextCreatAccount(),
+                  _buildsubline(),
                   SizedBox(
-                    height: (MediaQuery.of(context).size.height / 15),
-                    width: 81,
+                    height: (MediaQuery.of(context).size.height / 13),
+                    width: 22,
                   ),
-                  _buildEmailTF(),
+                  _buildVerificationCodeTF(),
                   SizedBox(
                     height: (MediaQuery.of(context).size.height / 57),
-                    width: 15,
+                    width: 22,
                   ),
                   _buildPasswordlTF(),
                   SizedBox(
-                    height: (MediaQuery.of(context).size.height / 17.5),
-                    width: 47,
+                    height: (MediaQuery.of(context).size.height / 57),
+                    width: 22,
                   ),
-                  _buildConnectButton(),
+                  _buildPasswordlVerificationTF(),
                   SizedBox(
-                    height: (MediaQuery.of(context).size.height / 28),
-                    width: 43,
+                    height: (MediaQuery.of(context).size.height / 17),
+                    width: 22,
                   ),
-                  _buildTextForgetPassword(),
+                  _buildButton(),
                   SizedBox(
-                    height: (MediaQuery.of(context).size.height / 15),
-                    width: 43,
+                    height: (MediaQuery.of(context).size.height / 90),
+                    width: 22,
                   ),
-                  _buildBackgroundImage(),
+                  _buildBackgroundImage()
                 ],
               ),
             ),

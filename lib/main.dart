@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nolycompta/Login_screens/LogIn.dart';
+import 'Screens/LogIn/LogIn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'tt_commons'),
-      home: Login_page1(),
+      home: Login(),
     );
   }
 }
