@@ -5,6 +5,10 @@ import 'package:nolycompta/Screens/Create_Account/CreateAcount.dart';
 
 import 'package:nolycompta/constant/const.dart';
 
+import '../../constant/buttons.dart';
+import '../../constant/headline.dart';
+import '../../constant/nolylogo_bg.dart';
+import '../../constant/textfield.dart';
 import 'ForgetPassword.dart';
 
 class Login extends StatefulWidget {
@@ -16,48 +20,26 @@ class Login extends StatefulWidget {
 
 // ignore: camel_case_types
 class _LoginState extends State<Login> {
-  //noly upper logo
-  Widget _buildnolylogo(BuildContext context) {
-    return Container(
-      height: (MediaQuery.of(context).size.height / 4.7),
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(
-            'assets/images/noly_logo.png',
-          ),
-          scale: 1.10,
-        ),
-      ),
-    );
+  void goto(context) {
+    /*Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Password_Verification()),
+    );*/
   }
 
-//Text "CONNEXION entrez votre email et votre mot de passe etc"
-  Widget _buildTextHeadline() {
+  Widget _buildsubline() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
-      child: Column(
-        children: [
-          Container(
-            child: const Text(
-              "Connexion",
-              style: TextStyle(
-                fontSize: 39,
-                fontFamily: 'DemiBold',
-              ),
-            ),
+      child: Container(
+        child: Text(
+          "Entrez votre email et votre mot de passe pour accéder à votre compte Noly",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 14,
+            fontFamily: 'Regular',
+            color: Color(0xffB0B0B0),
           ),
-          Container(
-            child: Text(
-              "Entrez votre email et votre mot de passe pour accéder à votre compte Noly",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 14,
-                fontFamily: 'Regular',
-                color: Color(0xffB0B0B0),
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -73,7 +55,7 @@ class _LoginState extends State<Login> {
                 text: 'Créez un compte',
                 style: TextStyle(
                   fontSize: 18,
-                  color: Color(0xff54BAAA),
+                  color: greencol,
                   fontFamily: 'Medium',
                   decoration: TextDecoration.underline,
                 ),
@@ -92,122 +74,6 @@ class _LoginState extends State<Login> {
     );
   }
 
-  Widget _buildEmailTF() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            'E-mail',
-            style: TextStyle(
-              fontSize: 18,
-              fontFamily: 'Medium',
-            ),
-          ),
-          SizedBox(
-            height: 5,
-            width: 5,
-          ),
-          Container(
-            height: 44,
-            child: Neumorphic(
-              style: text_field_innershadow,
-              child: TextFormField(
-                textAlign: TextAlign.left,
-                decoration: InputDecoration(
-                  isDense: true,
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(right: 22),
-                  prefixIcon: Image.asset(
-                    'assets/images/E-mail.png',
-                    width: 50,
-                    height: 55,
-                    alignment: Alignment.centerLeft,
-                  ),
-                  focusedBorder: text_field_focused,
-                  enabledBorder: text_field_unfocused,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildPasswordlTF() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            'Mot de passe',
-            style: TextStyle(
-              fontSize: 18,
-              fontFamily: 'Medium',
-            ),
-          ),
-          SizedBox(
-            height: 5,
-            width: 5,
-          ),
-          Container(
-            height: 44,
-            child: Neumorphic(
-              style: text_field_innershadow,
-              child: TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  isDense: true,
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(right: 22),
-                  prefixIcon: Image.asset(
-                    'assets/images/Password.png',
-                    width: 50,
-                    height: 55,
-                    alignment: Alignment.centerLeft,
-                  ),
-                  focusedBorder: text_field_focused,
-                  enabledBorder: text_field_unfocused,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildButton() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
-      child: SizedBox(
-        height: 48.5,
-        width: double.infinity,
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text(
-            'Se connecter',
-            style: TextStyle(
-              fontSize: 22,
-              fontFamily: 'DemiBold',
-            ),
-          ),
-          style: ElevatedButton.styleFrom(
-            foregroundColor: Colors.white,
-            backgroundColor: Color(0xff55BBA8),
-            elevation: 15,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25), // <-- Radius
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget _buildForgetPassword() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
@@ -218,7 +84,7 @@ class _LoginState extends State<Login> {
                 text: 'Mot de passe oublié ?',
                 style: TextStyle(
                   fontSize: 18,
-                  color: Color(0xff4DB1D9),
+                  color: fadebluecol,
                   fontFamily: 'Medium',
                   decoration: TextDecoration.underline,
                 ),
@@ -237,25 +103,6 @@ class _LoginState extends State<Login> {
     );
   }
 
-  Widget _buildBackgroundImage() {
-    return Container(
-      height: (MediaQuery.of(context).size.height / 6),
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.none,
-          alignment: FractionalOffset(
-            -0.55,
-            -1.0,
-          ),
-          scale: 1,
-          image: AssetImage(
-            "assets/images/cloud_bg.png",
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -264,47 +111,30 @@ class _LoginState extends State<Login> {
           children: [
             noly_background,
             SingleChildScrollView(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.height / 30),
+              reverse: true,
               child: Column(
                 children: [
-                  _buildnolylogo(context),
-                  SizedBox(
-                    height: (MediaQuery.of(context).size.height / 27),
-                    width: 26,
-                  ),
-                  _buildTextHeadline(),
-                  SizedBox(
-                    height: (MediaQuery.of(context).size.height / 50),
-                    width: 22,
-                  ),
+                  Noly_logo(),
+                  Sized_Box(27),
+                  Headline('Connexion'),
+                  _buildsubline(),
+                  Sized_Box(50),
                   _buildCreatAccount(),
-                  SizedBox(
-                    height: (MediaQuery.of(context).size.height / 15),
-                    width: 81,
-                  ),
-                  _buildEmailTF(),
-                  SizedBox(
-                    height: (MediaQuery.of(context).size.height / 57),
-                    width: 15,
-                  ),
-                  _buildPasswordlTF(),
-                  SizedBox(
-                    height: (MediaQuery.of(context).size.height / 17.5),
-                    width: 47,
-                  ),
-                  _buildButton(),
-                  SizedBox(
-                    height: (MediaQuery.of(context).size.height / 28),
-                    width: 43,
-                  ),
+                  Sized_Box(15),
+                  Text_Field('E-mail', 'assets/images/icons/E-mail.png', false),
+                  Sized_Box(57),
+                  Text_Field(
+                      'Mot de passe', 'assets/images/icons/Password.png', true),
+                  Sized_Box(17.5),
+                  Button_wide(goto, 'Se connecter'),
+                  Sized_Box(28),
                   _buildForgetPassword(),
-                  SizedBox(
-                    height: (MediaQuery.of(context).size.height / 80),
-                    width: 43,
-                  ),
-                  _buildBackgroundImage(),
                 ],
               ),
             ),
+            Cloud_bg(),
           ],
         ),
       ),
