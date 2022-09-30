@@ -3,15 +3,13 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:nolycompta/constant/const.dart';
 
 class Text_Field extends StatelessWidget {
+  //GlobalKey<FormState> globalFormKey = new GlobalKey<FormState>();
   final String title;
   final String logo;
+  final Function _validator;
   final bool obscure;
 
-  Text_Field(
-    this.title,
-    this.logo,
-    this.obscure,
-  );
+  Text_Field(this.title, this.logo, this.obscure, this._validator);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -35,20 +33,28 @@ class Text_Field extends StatelessWidget {
             child: Neumorphic(
               style: text_field_innershadow,
               child: TextFormField(
-                /*validator: (( value) {
-                  if (value.trim().isEmpty) {
-                return 'Please enter your email address';
-              }
-              // Check if the entered email has the right format
-              if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
+                validator: ((value) {
+                  return _validator(value);
+                  // if (value!.isEmpty) {
+                  //  return "enter ur email";
+                  // }
+                }),
+                //  key: globalFormKey,
+                // validator: ((String? value) {
+                //if (value.isEmpty) {
+                //   return error_return;
+                // }
+                // Check if the entered email has the right format
+                /*if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
                 return 'Please enter a valid email address';
               }
               // Return null if the entered email is valid
-              return null;
-            },),*/
+              return null;*/
+                // }),
                 obscureText: obscure,
                 textAlign: TextAlign.left,
                 decoration: InputDecoration(
+                  errorBorder: InputBorder.none,
                   isDense: true,
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.only(right: 22),

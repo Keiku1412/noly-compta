@@ -10,28 +10,13 @@ import '../../constant/nolylogo_bg.dart';
 import '../../constant/textfield.dart';
 import 'PasswordVerification.dart';
 
-class Forget_Paswword extends StatefulWidget {
-  const Forget_Paswword({Key? key}) : super(key: key);
-
+class Test_page extends StatefulWidget {
   @override
-  State<Forget_Paswword> createState() => _Forget_PaswwordState();
+  State<Test_page> createState() => _Test_page();
 }
 
 // ignore: camel_case_types
-class _Forget_PaswwordState extends State<Forget_Paswword> {
-  _emailvalidator(value) {
-    if (value!.isEmpty) {
-      return "enter ur email";
-    }
-  }
-
-  void goto(context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Password_Verification()),
-    );
-  }
-
+class _Test_page extends State<Test_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +30,7 @@ class _Forget_PaswwordState extends State<Forget_Paswword> {
                 children: [
                   Noly_logo(),
                   Sized_Box(19),
-                  Headline('Récupérer mon mot de passe'),
+                  Headline('test page'),
                   Sized_Box(10),
                   /*Text_Field(
                     'Entrez votre email',
@@ -54,7 +39,6 @@ class _Forget_PaswwordState extends State<Forget_Paswword> {
                     _emailvalidator,
                   ),*/
                   Sized_Box(17),
-                  Button_wide(goto, 'Envoyer une confirmation'),
                   Sized_Box(50),
                 ],
               ),

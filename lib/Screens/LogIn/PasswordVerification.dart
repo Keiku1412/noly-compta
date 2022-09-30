@@ -17,6 +17,12 @@ class Password_Verification extends StatefulWidget {
 
 // ignore: camel_case_types
 class _Password_Verification extends State<Password_Verification> {
+  _emailvalidator(value) {
+    if (value!.isEmpty) {
+      return "enter ur email";
+    }
+  }
+
   void goto(context) {
     /*Navigator.push(
       context,
@@ -59,12 +65,18 @@ class _Password_Verification extends State<Password_Verification> {
                   _buildsubline(),
                   Sized_Box(13),
                   Sized_Box(57),
-                  Text_Field('Nouveau mot de passe',
-                      'assets/images/icons/Password.png', true),
+                  /* Text_Field(
+                      'Nouveau mot de passe',
+                      'assets/images/icons/Password.png',
+                      true,
+                      _emailvalidator),
                   Sized_Box(57),
-                  Text_Field('Confirmez votre mot de passe',
-                      'assets/images/icons/Password.png', true),
-                  Sized_Box(17),
+                  Text_Field(
+                      'Confirmez votre mot de passe',
+                      'assets/images/icons/Password.png',
+                      true,
+                      _emailvalidator),
+                  Sized_Box(17),*/
                   Button_wide(goto, 'Envoyer une confirmation'),
                   Sized_Box(50),
                 ],
