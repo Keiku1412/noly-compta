@@ -160,8 +160,14 @@ class _LoginState extends State<Login> {
                     Sized_Box(50),
                     _buildCreatAccount(),
                     Sized_Box(15),
-                    Text_Field('E-mail', 'assets/images/icons/E-mail.png',
-                        false, _emailvalidator),
+                    Container(
+                      height: 150,
+                      child: Text_Field(
+                          'E-mail',
+                          'assets/images/icons/E-mail.png',
+                          false,
+                          _emailvalidator),
+                    ),
                     Sized_Box(57),
                     TextFormField(
                       validator: ((value) {
