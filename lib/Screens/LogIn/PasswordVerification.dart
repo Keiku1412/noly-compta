@@ -17,17 +17,63 @@ class Password_Verification extends StatefulWidget {
 
 // ignore: camel_case_types
 class _Password_Verification extends State<Password_Verification> {
-  _emailvalidator(value) {
-    if (value!.isEmpty) {
-      return "enter ur email";
+  GlobalKey<FormState> formKey = new GlobalKey<FormState>();
+  late String _useremail;
+  late String _userpassword;
+  late String _userpassword2;
+
+  void goto(context) {
+    final isValidForm = formKey.currentState!.validate();
+
+    print('test button pressed');
+
+    if (isValidForm) {
+      /*   Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Forget_Paswword()),
+                    );*/
+      print("everythiing is okay ready to go ");
     }
   }
 
-  void goto(context) {
-    /*Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Password_Verification()),
-    );*/
+  _emailvalidator(value) {
+    if (value!.isEmpty) {
+      print("Email is empty");
+
+      return "Veuillez entrer votre adresse e-mail";
+    } else {
+      _useremail = value;
+      print("Email is " + _useremail);
+      return null;
+    }
+  }
+
+  RegExp regex =
+      RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
+  _passwordvalidator(value) {
+    if (value.isEmpty) {
+      print("Password is empty");
+      return "Veuillez entrer votre mot de passe";
+    } else if (!regex.hasMatch(value)) {
+      return "Mot de passe doit contenir 1 caractère: spécial, majuscule, chiffre";
+    } else {
+      _userpassword = value;
+      print("Password is " + _userpassword);
+      return null;
+    }
+  }
+
+  _passwordvalidator2(value) {
+    if (value.isEmpty) {
+      print("Password is empty");
+      return "Veuillez entrer votre mot de passe";
+    } else if (value != _userpassword) {
+      print("Password " + value + "is diffrent than " + _userpassword);
+      return "veuillez entrer le même mot de passe";
+    } else {
+      return null;
+    }
   }
 
   Widget _buildsubline() {
@@ -56,30 +102,37 @@ class _Password_Verification extends State<Password_Verification> {
             noly_background,
             SingleChildScrollView(
               reverse: true,
-              child: Column(
-                children: [
-                  Noly_logo(),
-                  Sized_Box(28),
-                  Headline('Récupérer mon mot de passe'),
-                  Sized_Box(100),
-                  _buildsubline(),
-                  Sized_Box(13),
-                  Sized_Box(57),
-                  /* Text_Field(
-                      'Nouveau mot de passe',
-                      'assets/images/icons/Password.png',
-                      true,
-                      _emailvalidator),
-                  Sized_Box(57),
-                  Text_Field(
-                      'Confirmez votre mot de passe',
-                      'assets/images/icons/Password.png',
-                      true,
-                      _emailvalidator),
-                  Sized_Box(17),*/
-                  Button_wide(goto, 'Envoyer une confirmation'),
-                  Sized_Box(50),
-                ],
+              child: Form(
+                key: formKey,
+                child: Column(
+                  children: [
+                    Noly_logo(),
+                    Sized_Box(28),
+                    Headline('Récupérer mon mot de passe'),
+                    Sized_Box(100),
+                    _buildsubline(),
+                    Sized_Box(13),
+                    Sized_Box(57),
+                    Container(
+                      height: 108,
+                      child: Text_Field(
+                          'Nouveau mot de passe',
+                          'assets/images/icons/Password.png',
+                          true,
+                          _passwordvalidator),
+                    ),
+                    Container(
+                      height: 108,
+                      child: Text_Field(
+                          'Confirmez votre mot de passe',
+                          'assets/images/icons/Password.png',
+                          true,
+                          _passwordvalidator2),
+                    ),
+                    Button_wide(goto, 'Changer le mot de passe'),
+                    Sized_Box(50),
+                  ],
+                ),
               ),
             ),
             Cloud_bg(),

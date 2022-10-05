@@ -34,10 +34,10 @@ class _Create_Account1 extends State<Create_Account1> {
                   Cards_AC(
                       'Ma structure existe', 'assets/images/logos/1_1.png'),
                   Sized_Box(95),
-                  Cards_AC("Je n'ai pas de structure existante",
+                  Cards_AC("Je n'ai pas de\nstructure existante",
                       'assets/images/logos/1_2.png'),
                   Sized_Box(95),
-                  Cards_AC('Je suis une micro-entreprise',
+                  Cards_AC('Je suis une \nmicro-entreprise',
                       'assets/images/logos/1_3.png'),
                 ],
               ),

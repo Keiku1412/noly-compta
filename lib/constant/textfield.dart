@@ -18,7 +18,6 @@ class Text_Field extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            width: 200,
             child: Text(
               title,
               style: TextStyle(
@@ -29,103 +28,60 @@ class Text_Field extends StatelessWidget {
           ),
           SizedBox(
             height: 5,
-            width: 50,
+            width: 5,
           ),
-          Neumorphic(
-            style: text_field_innershadow,
-            child: TextFormField(
-              validator: ((value) {
-                return _validator(value);
-              }),
-              obscureText: obscure,
-              textAlign: TextAlign.left,
-              decoration: InputDecoration(
-                errorBorder: InputBorder.none,
-                isDense: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(color: greencol, width: 1.5),
-                ),
-                contentPadding: EdgeInsets.only(
-                  left: 25,
-                ),
-                prefixIcon: Image.asset(
-                  logo,
-                  width: 55,
-                  height: 50,
-                  scale: 0.9,
-                  alignment: Alignment.centerLeft,
-                ),
-                focusedBorder: text_field_focused,
-                enabledBorder: text_field_unfocused,
+          Stack(
+            children: [
+              Container(
+                height: 48,
+                width: MediaQuery.of(context).size.width - 82,
+                child: Neumorphic(style: text_field_innershadow),
               ),
-            ),
+              TextFormField(
+                validator: ((value) {
+                  return _validator(value);
+                }),
+                autovalidateMode: AutovalidateMode.disabled,
+                obscureText: obscure,
+                textAlign: TextAlign.left,
+                decoration: InputDecoration(
+                  isDense: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide(color: greencol, width: 1.5),
+                  ),
+                  contentPadding: EdgeInsets.only(
+                    left: 25,
+                  ),
+                  prefixIcon: Image.asset(
+                    logo,
+                    width: 55,
+                    height: 50,
+                    scale: 0.9,
+                    alignment: Alignment.centerLeft,
+                  ),
+                  focusedBorder: text_field_focused,
+                  enabledBorder: text_field_unfocused,
+                  errorStyle: TextStyle(
+                    fontSize: 11,
+                    fontFamily: 'Medium',
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
     );
   }
 }
-/*class Text_Field extends StatelessWidget {
-  //GlobalKey<FormState> globalFormKey = new GlobalKey<FormState>();
-  final String title;
-  final String logo;
-  final Function _validator;
-  final bool obscure;
 
-  Text_Field(this.title, this.logo, this.obscure, this._validator);
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 18,
-              fontFamily: 'Medium',
-            ),
-          ),
-          SizedBox(
-            height: 5,
-            width: 5,
-          ),
-          Center(
-            child: Container(
-              height: 44,
-              child: Neumorphic(
-                style: text_field_innershadow,
-                child: TextFormField(
-                  validator: ((value) {
-                    return _validator(value);
-                  }),
-                  obscureText: obscure,
-                  textAlign: TextAlign.left,
-                  decoration: InputDecoration(
-                    errorBorder: InputBorder.none,
-                    isDense: true,
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.only(right: 22),
-                    prefixIcon: Image.asset(
-                      logo,
-                      width: 50,
-                      height: 55,
-                      alignment: Alignment.centerLeft,
-                    ),
-                    focusedBorder: text_field_focused,
-                    enabledBorder: text_field_unfocused,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}*/
+var vertfication_code_style = NeumorphicStyle(
+  boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(8)),
+  color: Colors.transparent,
+  depth: -3,
+  shadowDarkColorEmboss: fadebluecol,
+);
 
 var text_field_innershadow = NeumorphicStyle(
   // border: NeumorphicBorder(width: 5),
@@ -148,6 +104,6 @@ var text_field_unfocused = OutlineInputBorder(
   ),
   borderSide: BorderSide(
     color: greencol,
-    width: 1,
+    width: 1.5,
   ),
 );

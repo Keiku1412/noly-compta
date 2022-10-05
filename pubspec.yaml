@@ -18,12 +18,20 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_neumorphic: ^3.2.0
   step_progress_indicator: ^1.0.2
+  email_validator: ^2.1.17
+  flutter_verification_code: ^1.1.6
+  flutter_native_splash: ^2.2.10+1
+  
  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets\images\logos\noly_only.png
 
   flutter_lints: ^2.0.0
 

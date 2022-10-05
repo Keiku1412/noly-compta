@@ -28,11 +28,11 @@ class Cards_AC extends StatelessWidget {
             Container(
               width: 210,
               child: Text(
-                "Ma structure existe",
-                maxLines: 2,
+                title,
+                maxLines: 3,
                 textAlign: TextAlign.left,
                 style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 20,
                   fontFamily: 'DemiBold',
                 ),
               ),

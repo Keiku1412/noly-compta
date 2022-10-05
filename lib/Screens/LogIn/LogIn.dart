@@ -1,7 +1,9 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:nolycompta/Screens/Create_Account/CreateAcount.dart';
+import 'package:nolycompta/Screens/LogIn/test_page.dart';
 
 import 'package:nolycompta/constant/const.dart';
 
@@ -20,47 +22,51 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   GlobalKey<FormState> formKey = new GlobalKey<FormState>();
-
+  bool rememberMe = false;
   late String _useremail;
   late String _userpassword;
 
-  late int x_valid;
   void goto(context) {
     final isValidForm = formKey.currentState!.validate();
-
     print('test button pressed');
-    // x_valid = 0;
-    //_useremail = "";
-    //_userpassword = "";
 
     if (isValidForm) {
       print("everythiing is okay ready to go ");
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Test_page()),
+      );
     }
   }
 
   _emailvalidator(value) {
     if (value!.isEmpty) {
-      // print('user email is ' + _useremail);
-      print("ikhdim");
-      // print(_autoValidate);
-      return "enter ur email plz";
+      print("Email is empty");
+
+      return "Veuillez entrer votre adresse e-mail";
+    } else if (!EmailValidator.validate(value)) {
+      return "Veuillez utiliser un Email valide";
     } else {
-      //setState(() => _autoValidate = true);
-      // print("user email " + _useremail);
-//_useremail = value;
+      _useremail = value;
+      print("Email is " + _useremail);
       return null;
     }
   }
 
-  /* _passwordvalidator(value) {
+  RegExp regex =
+      RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
+  _passwordvalidator(value) {
     if (value.isEmpty) {
-      print('user password is empty ' + _userpassword);
-      return "password is emty";
+      print("Password is empty");
+      return "Veuillez entrer votre mot de passe";
+    } else if (!regex.hasMatch(value)) {
+      return "Mot de passe doit contenir 1 caractère: spécial, majuscule, chiffre";
     } else {
-      _useremail = value;
+      _userpassword = value;
+      print("Password is " + _userpassword);
       return null;
     }
-  }*/
+  }
 
   Widget _buildsubline() {
     return Padding(
@@ -137,6 +143,37 @@ class _LoginState extends State<Login> {
     );
   }
 
+  Widget _buildCheckBox() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
+      child: Container(
+        child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+          Text("Gardez-moi connecté ",
+              style: TextStyle(
+                  fontSize: 18, fontFamily: 'Medium', color: greencol)),
+          SizedBox(width: 10.0),
+          SizedBox(
+            height: 24.0,
+            width: 24.0,
+            child: Theme(
+              data: ThemeData(unselectedWidgetColor: greencol // Your color
+                  ),
+              child: Checkbox(
+                activeColor: greencol,
+                value: rememberMe,
+                onChanged: (bool? value) {
+                  setState(() {
+                    rememberMe = value!;
+                  });
+                },
+              ),
+            ),
+          ),
+        ]),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -149,7 +186,7 @@ class _LoginState extends State<Login> {
                   bottom: MediaQuery.of(context).size.height / 30),
               reverse: true,
               child: Form(
-                autovalidateMode: AutovalidateMode.onUserInteraction,
+                autovalidateMode: AutovalidateMode.disabled,
                 key: formKey,
                 child: Column(
                   children: [
@@ -161,38 +198,23 @@ class _LoginState extends State<Login> {
                     _buildCreatAccount(),
                     Sized_Box(15),
                     Container(
-                      height: 150,
+                      height: 108,
                       child: Text_Field(
                           'E-mail',
                           'assets/images/icons/E-mail.png',
                           false,
                           _emailvalidator),
                     ),
-                    Sized_Box(57),
-                    TextFormField(
-                      validator: ((value) {
-                        if (value!.isEmpty) {
-                          // print('user email is ' + _useremail);
-                          print("ikhdim cham 2");
-                          // print(_autoValidate);
-                          return "enter ur cham 2";
-                        } else {
-                          //setState(() => _autoValidate = true);
-                          // print("user email " + _useremail);
-//_useremail = value;
-                          return null;
-                        }
-                      }),
-                      textAlign: TextAlign.left,
+                    Container(
+                      height: 108,
+                      child: Text_Field(
+                          'Mot de passe',
+                          'assets/images/icons/Password.png',
+                          true,
+                          _passwordvalidator),
                     ),
-
-                    /* Text_Field(
-                      'Mot de passe',
-                      'assets/images/icons/Password.png',
-                      true,
-                      _emailvalidator,
-                    ),*/
-                    Sized_Box(17.5),
+                    _buildCheckBox(),
+                    Sized_Box(57),
                     Button_wide(goto, 'Se connecter'),
                     Sized_Box(28),
                     _buildForgetPassword(),
