@@ -22,6 +22,7 @@ class Forget_Paswword extends StatefulWidget {
 // ignore: camel_case_types
 class _Forget_PaswwordState extends State<Forget_Paswword> {
   GlobalKey<FormState> formKey = new GlobalKey<FormState>();
+  final useremail_controller = TextEditingController();
   late String _useremail;
 
   void goto(context) {
@@ -73,7 +74,8 @@ class _Forget_PaswwordState extends State<Forget_Paswword> {
                           'E-mail',
                           'assets/images/icons/E-mail.png',
                           false,
-                          _emailvalidator),
+                          _emailvalidator,
+                          useremail_controller),
                     ),
                     Sized_Box(17),
                     Button_wide(goto, 'Envoyer code de vérification'),

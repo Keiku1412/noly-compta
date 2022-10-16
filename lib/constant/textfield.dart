@@ -8,8 +8,10 @@ class Text_Field extends StatelessWidget {
   final String logo;
   final Function _validator;
   final bool obscure;
+  final text_field_controller;
 
-  Text_Field(this.title, this.logo, this.obscure, this._validator);
+  Text_Field(this.title, this.logo, this.obscure, this._validator,
+      this.text_field_controller);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,6 +43,7 @@ class Text_Field extends StatelessWidget {
                 validator: ((value) {
                   return _validator(value);
                 }),
+                controller: text_field_controller,
                 autovalidateMode: AutovalidateMode.disabled,
                 obscureText: obscure,
                 textAlign: TextAlign.left,

@@ -18,9 +18,11 @@ class Password_Verification extends StatefulWidget {
 // ignore: camel_case_types
 class _Password_Verification extends State<Password_Verification> {
   GlobalKey<FormState> formKey = new GlobalKey<FormState>();
+  final userpassword_controller1 = TextEditingController();
+  final userpassword_controller2 = TextEditingController();
   late String _useremail;
-  late String _userpassword;
-  late String _userpassword2;
+  late String _userpassword = '';
+  late String _userpassword2 = '';
 
   void goto(context) {
     final isValidForm = formKey.currentState!.validate();
@@ -37,21 +39,9 @@ class _Password_Verification extends State<Password_Verification> {
     }
   }
 
-  _emailvalidator(value) {
-    if (value!.isEmpty) {
-      print("Email is empty");
-
-      return "Veuillez entrer votre adresse e-mail";
-    } else {
-      _useremail = value;
-      print("Email is " + _useremail);
-      return null;
-    }
-  }
-
-  RegExp regex =
-      RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
   _passwordvalidator(value) {
+    RegExp regex =
+        RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
     if (value.isEmpty) {
       print("Password is empty");
       return "Veuillez entrer votre mot de passe";
@@ -119,15 +109,17 @@ class _Password_Verification extends State<Password_Verification> {
                           'Nouveau mot de passe',
                           'assets/images/icons/Password.png',
                           true,
-                          _passwordvalidator),
+                          _passwordvalidator,
+                          userpassword_controller1),
                     ),
                     Container(
                       height: 108,
                       child: Text_Field(
-                          'Confirmez votre mot de passe',
+                          'Confirmez votre mot de pass',
                           'assets/images/icons/Password.png',
                           true,
-                          _passwordvalidator2),
+                          _passwordvalidator2,
+                          userpassword_controller2),
                     ),
                     Button_wide(goto, 'Changer le mot de passe'),
                     Sized_Box(50),

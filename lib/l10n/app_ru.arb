@@ -1,0 +1,10 @@
+{
+    "language":"Russian",
+    "conexion":"Связи",
+    "sub_title_login":"Введите адрес электронной почты и пароль для доступа к учетной записи Noly.",
+    "create_account":"Завести аккаунт",
+    "email":"Эл. адрес",
+    "password":"Пароль",
+    "log_in":"Войти",
+    "forgetpassword":"Забыли свой пароль?"
+}

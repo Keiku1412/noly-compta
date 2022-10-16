@@ -1,0 +1,17 @@
+{
+    "language":"English",
+    "@language":{
+        "description": "The current Language"
+    },
+    "helloWorld": "Hello World!",
+    "@helloWorld":{
+        "description": "A programmer greeting"
+    },
+    "conexion":"Connexion",
+    "sub_title_login":"Enter your email and password to access your Noly account",
+    "create_account":"Create an account",
+    "email":"E-mail",
+    "password":"Password",
+    "log_in":"Sign In",
+    "forgetpassword":"Forgot your password?"
+}

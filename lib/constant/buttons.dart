@@ -12,24 +12,37 @@ class Button_wide extends StatelessWidget {
       child: SizedBox(
         height: 48.5,
         width: double.infinity,
-        child: ElevatedButton(
-          onPressed: () {
-            x(context);
-          },
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 22,
-              fontFamily: 'DemiBold',
-            ),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: fadebluecol,
+                blurRadius: 30,
+                spreadRadius: 0.5,
+                offset: Offset(0, 12),
+              ),
+            ],
           ),
-          style: ElevatedButton.styleFrom(
-            shadowColor: fadebluecol,
-            foregroundColor: Colors.white,
-            backgroundColor: greencol,
-            elevation: 15,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25), // <-- Radius
+          child: ElevatedButton(
+            onPressed: () {
+              x(context);
+            },
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: 22,
+                fontFamily: 'DemiBold',
+              ),
+            ),
+            style: ElevatedButton.styleFrom(
+              shadowColor: fadebluecol,
+              foregroundColor: Colors.white,
+              backgroundColor: greencol,
+              elevation: 15,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25), // <-- Radius
+              ),
             ),
           ),
         ),

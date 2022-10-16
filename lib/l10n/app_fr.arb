@@ -1,0 +1,11 @@
+{
+    "language":"French",
+    "conexion":"Connexion",
+    "sub_title_login":"Entrez votre email et votre mot de passe pour accéder à votre compte Noly",
+    "create_account":"Créez un compte",
+    "email":"E-mail",
+    "password":"Mot de passe",
+    "log_in":"Se connecter",
+    "forgetpassword":"Mot de passe oublié ?"
+    
+}

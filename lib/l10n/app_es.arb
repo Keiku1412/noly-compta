@@ -1,0 +1,10 @@
+{
+    "language":"Español",
+    "conexion":"Conexión",
+    "sub_title_login":"Introduce tu email y contraseña para acceder a tu cuenta de Noly",
+    "create_account":"Crea una cuenta",
+    "email":"Correo electrónico",
+    "password":"Clave",
+    "log_in":"Registrarse",
+    "forgetpassword":"¿Olvidaste tu contraseña?"
+}
