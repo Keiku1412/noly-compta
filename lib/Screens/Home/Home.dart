@@ -59,32 +59,10 @@ class _Home extends State<Home> {
                   Noly_logo(),
                   Sized_Box(19),
                   Headline('Welcome '),
-                  // Headline('Welcome '),
                   Headline(useremail ?? ''),
                   Sized_Box(4),
                   Button_wide(goto, 'Log out'),
-
-                  /*Text_Field(
-                    'Entrez votre email',
-                    'assets/images/icons/E-mail.png',
-                    false,
-                    _emailvalidator,
-                  ),*/
                   Sized_Box(17),
-                  /* FutureBuilder<User>(
-                    future: futureUser,
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        return Headline(snapshot.data!.username);
-                        //Text(snapshot.data!.username);
-                      } else if (snapshot.hasError) {
-                        return Text('${snapshot.error}');
-                      }
-
-                      // By default, show a loading spinner.
-                      return const CircularProgressIndicator();
-                    },
-                  ),*/
                   Sized_Box(50),
                 ],
               ),

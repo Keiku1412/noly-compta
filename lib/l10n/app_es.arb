@@ -1,10 +1,33 @@
 {
     "language":"Español",
-    "conexion":"Conexión",
+    "connection":"Conexión",
     "sub_title_login":"Introduce tu email y contraseña para acceder a tu cuenta de Noly",
     "create_account":"Crea una cuenta",
     "email":"Correo electrónico",
     "password":"Clave",
     "log_in":"Registrarse",
-    "forgetpassword":"¿Olvidaste tu contraseña?"
+    "forgetpassword":"¿Olvidaste tu contraseña?",
+
+    "enter_email":"Introduzca su dirección de correo electrónico",
+    "use_valid_email":"Por favor, utilice una dirección de correo electrónico válida",
+    "enter_password":"Por favor, introduzca su contraseña",
+    "use_valid_password":"La contraseña debe contener 1 carácter: especial, mayúscula, número",
+   
+    "api_no_user_found":"No se han encontrado usuarios",
+    "api_password_not_valid":"Contraseña inválida",
+
+    "l_fp_sendverification":"Enviar código de verificación",
+    "l_fp_headline":"Verificación del correo electrónico",
+
+    "l_cv_headline":"Compruebe el código de su dirección de correo electrónico",
+    "l_cv_delete_all":"Borrar todo",
+    "l_cv_enter_full_code":"Por favor, introduzca el código completo",
+    "l_cv_confirm":"Confirmar",
+
+    "l_pv_recover_password":"Recuperar mi contraseña",
+    "l_pv_subtitle":"Por favor, configure su nueva contraseña",
+    "l_pv_new_password":"Nueva contraseña",
+    "l_pv_confirm_password":"Confirme su contraseña",
+    "l_pv_same_password":"Por favor, utilice la misma contraseña",
+    "l_pv_change_password":"Cambiar contraseña"
 }

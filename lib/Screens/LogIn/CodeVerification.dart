@@ -6,7 +6,7 @@ import 'package:flutter_verification_code/flutter_verification_code.dart';
 
 import 'package:nolycompta/constant/const.dart';
 import 'package:nolycompta/constant/headline.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constant/buttons.dart';
 import '../../constant/nolylogo_bg.dart';
 import '../../constant/textfield.dart';
@@ -36,6 +36,49 @@ class _Code_Verification extends State<Code_Verification> {
     }
   }
 
+  Widget Verification_field() {
+    return VerificationCode(
+      digitsOnly: true,
+      underlineUnfocusedColor: greencol,
+      underlineWidth: 2,
+      fillColor: Color.fromARGB(41, 200, 189, 189),
+      fullBorder: true,
+      textStyle: Theme.of(context)
+          .textTheme
+          .bodyText2!
+          .copyWith(color: Theme.of(context).primaryColor),
+      keyboardType: TextInputType.number,
+      underlineColor: fadebluecol,
+      length: 4,
+      cursorColor: greencol,
+      clearAll: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          T.of(context)!.l_cv_delete_all,
+          style: TextStyle(
+              fontSize: 14.0,
+              fontFamily: 'Medium',
+              decorationColor: Colors.red,
+              decorationThickness: 1.5,
+              decoration: TextDecoration.underline,
+              color: Colors.red),
+        ),
+      ),
+      margin: const EdgeInsets.all(12),
+      onCompleted: (String value) {
+        setState(() {
+          _code = value;
+        });
+      },
+      onEditing: (bool value) {
+        setState(() {
+          _onEditing = value;
+        });
+        if (!_onEditing) FocusScope.of(context).unfocus();
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,65 +92,21 @@ class _Code_Verification extends State<Code_Verification> {
                 children: [
                   Noly_logo(),
                   Sized_Box(19),
-                  Headline("Vérifier votre email avec le code"),
+                  Headline(T.of(context)!.l_cv_headline),
                   Sized_Box(10),
-                  VerificationCode(
-                    digitsOnly: true,
-                    underlineUnfocusedColor: fadebluecol,
-                    underlineWidth: 2,
-                    fullBorder: true,
-                    textStyle: Theme.of(context)
-                        .textTheme
-                        .bodyText2!
-                        .copyWith(color: Theme.of(context).primaryColor),
-                    keyboardType: TextInputType.number,
-                    underlineColor: fadebluecol,
-                    length: 4,
-                    cursorColor: greencol,
-
-                    // takes any widget, so you can implement your design
-                    clearAll: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'Effacer tout',
-                        style: TextStyle(
-                            fontSize: 14.0,
-                            fontFamily: 'Medium',
-                            decoration: TextDecoration.underline,
-                            color: greencol),
-                      ),
-                    ),
-                    margin: const EdgeInsets.all(12),
-                    onCompleted: (String value) {
-                      setState(() {
-                        _code = value;
-                      });
-                    },
-                    onEditing: (bool value) {
-                      setState(() {
-                        _onEditing = value;
-                      });
-                      if (!_onEditing) FocusScope.of(context).unfocus();
-                    },
-                  ),
+                  Verification_field(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Center(
-                      child: _onEditing
-                          ? const Text(
-                              'Veuillez entrer le code complet',
-                              style: TextStyle(
-                                fontSize: 14.0,
-                                fontFamily: 'Medium',
-                              ),
-                            )
-                          : Text(
-                              'Your code: $_code',
-                            ),
-                    ),
+                        child: _onEditing
+                            ? Text_Regular(T.of(context)!.l_cv_enter_full_code,
+                                Colors.black)
+                            : Text_Regular(
+                                T.of(context)!.l_cv_your_code + ' $_code',
+                                Colors.black)),
                   ),
                   Sized_Box(17),
-                  Button_wide(goto, 'Confirmer'),
+                  Button_wide(goto, T.of(context)!.l_cv_confirm),
                   Sized_Box(50),
                 ],
               ),

@@ -25,14 +25,10 @@ class _LoginState extends State<Login> {
   final useremail_controller = TextEditingController();
   final userpassword_controller = TextEditingController();
   SharedPreferences? userdata;
-  // late FToast fToast;
-  // late String token;
 
   @override
   void initState() {
     super.initState();
-    // fToast = FToast();
-    // fToast.init(context);
   }
 
   @override
@@ -55,9 +51,9 @@ class _LoginState extends State<Login> {
   _emailvalidator(value) {
     if (value!.isEmpty) {
       print("Email is empty");
-      return "Veuillez entrer votre adresse e-mail";
+      return T.of(context)!.enter_email;
     } else if (!EmailValidator.validate(value)) {
-      return "Veuillez utiliser un Email valide";
+      return T.of(context)!.use_valid_email;
     } else {
       return null;
     }
@@ -68,29 +64,12 @@ class _LoginState extends State<Login> {
         RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
     if (value.isEmpty) {
       print("Password is empty");
-      return "Veuillez entrer votre mot de passe";
+      return T.of(context)!.enter_password;
     } else if (!regex.hasMatch(value)) {
-      return "Mot de passe doit contenir 1 caractère: spécial, majuscule, chiffre";
+      return T.of(context)!.use_valid_password;
     } else {
       return null;
     }
-  }
-
-  Widget _buildsubline() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
-      child: Container(
-        child: Text(
-          AppLocalizations.of(context)!.sub_title_login,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 14,
-            fontFamily: 'Regular',
-            color: Color(0xffB0B0B0),
-          ),
-        ),
-      ),
-    );
   }
 
   Widget _buildCreatAccount() {
@@ -100,7 +79,7 @@ class _LoginState extends State<Login> {
         child: RichText(
           text: TextSpan(children: [
             TextSpan(
-                text: AppLocalizations.of(context)!.create_account,
+                text: T.of(context)!.create_account,
                 style: TextStyle(
                   fontSize: 18,
                   color: greencol,
@@ -129,7 +108,7 @@ class _LoginState extends State<Login> {
         child: RichText(
           text: TextSpan(children: [
             TextSpan(
-                text: AppLocalizations.of(context)!.forgetpassword,
+                text: T.of(context)!.forgetpassword,
                 style: TextStyle(
                   fontSize: 18,
                   color: fadebluecol,
@@ -169,8 +148,9 @@ class _LoginState extends State<Login> {
                   children: [
                     Noly_logo(),
                     Sized_Box(27),
-                    Headline(AppLocalizations.of(context)!.conexion),
-                    _buildsubline(),
+                    Headline(T.of(context)!.connection),
+                    Text_Regular(
+                        T.of(context)!.sub_title_login, Color(0xffB0B0B0)),
                     Sized_Box(50),
                     _buildCreatAccount(),
                     Sized_Box(15),
@@ -193,7 +173,7 @@ class _LoginState extends State<Login> {
                           userpassword_controller),
                     ),
                     Sized_Box(57),
-                    Button_wide(goto, AppLocalizations.of(context)!.log_in),
+                    Button_wide(goto, T.of(context)!.log_in),
                     Sized_Box(28),
                     _buildForgetPassword(),
                   ],

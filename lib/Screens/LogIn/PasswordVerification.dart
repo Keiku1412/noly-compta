@@ -1,9 +1,9 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:nolycompta/constant/buttons.dart';
 import 'package:nolycompta/constant/const.dart';
 import 'package:nolycompta/constant/headline.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../constant/nolylogo_bg.dart';
 import '../../constant/textfield.dart';
@@ -30,11 +30,6 @@ class _Password_Verification extends State<Password_Verification> {
     print('test button pressed');
 
     if (isValidForm) {
-      /*   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Forget_Paswword()),
-                    );*/
       print("everythiing is okay ready to go ");
     }
   }
@@ -44,9 +39,9 @@ class _Password_Verification extends State<Password_Verification> {
         RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
     if (value.isEmpty) {
       print("Password is empty");
-      return "Veuillez entrer votre mot de passe";
+      return T.of(context)!.enter_password;
     } else if (!regex.hasMatch(value)) {
-      return "Mot de passe doit contenir 1 caractère: spécial, majuscule, chiffre";
+      return T.of(context)!.use_valid_password;
     } else {
       _userpassword = value;
       print("Password is " + _userpassword);
@@ -57,30 +52,13 @@ class _Password_Verification extends State<Password_Verification> {
   _passwordvalidator2(value) {
     if (value.isEmpty) {
       print("Password is empty");
-      return "Veuillez entrer votre mot de passe";
+      return T.of(context)!.enter_password;
     } else if (value != _userpassword) {
       print("Password " + value + "is diffrent than " + _userpassword);
-      return "veuillez entrer le même mot de passe";
+      return T.of(context)!.l_pv_same_password;
     } else {
       return null;
     }
-  }
-
-  Widget _buildsubline() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
-      child: Container(
-        child: const Text(
-          "Veuillez configurer votre nouveau mot de passe.",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Color(0xff55BBA8),
-            fontSize: 14,
-            fontFamily: 'Regular',
-          ),
-        ),
-      ),
-    );
   }
 
   @override
@@ -98,15 +76,15 @@ class _Password_Verification extends State<Password_Verification> {
                   children: [
                     Noly_logo(),
                     Sized_Box(28),
-                    Headline('Récupérer mon mot de passe'),
+                    Headline(T.of(context)!.l_pv_recover_password),
                     Sized_Box(100),
-                    _buildsubline(),
+                    Text_Regular(T.of(context)!.l_pv_subtitle, greencol),
                     Sized_Box(13),
                     Sized_Box(57),
                     Container(
                       height: 108,
                       child: Text_Field(
-                          'Nouveau mot de passe',
+                          T.of(context)!.l_pv_new_password,
                           'assets/images/icons/Password.png',
                           true,
                           _passwordvalidator,
@@ -115,13 +93,13 @@ class _Password_Verification extends State<Password_Verification> {
                     Container(
                       height: 108,
                       child: Text_Field(
-                          'Confirmez votre mot de pass',
+                          T.of(context)!.l_pv_confirm_password,
                           'assets/images/icons/Password.png',
                           true,
                           _passwordvalidator2,
                           userpassword_controller2),
                     ),
-                    Button_wide(goto, 'Changer le mot de passe'),
+                    Button_wide(goto, T.of(context)!.l_pv_change_password),
                     Sized_Box(50),
                   ],
                 ),

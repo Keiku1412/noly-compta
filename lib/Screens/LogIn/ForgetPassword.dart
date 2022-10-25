@@ -1,16 +1,13 @@
 import 'package:email_validator/email_validator.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:nolycompta/Screens/LogIn/CodeVerification.dart';
-
 import 'package:nolycompta/constant/const.dart';
 import 'package:nolycompta/constant/headline.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constant/buttons.dart';
 import '../../constant/nolylogo_bg.dart';
 import '../../constant/textfield.dart';
-import 'PasswordVerification.dart';
 
 class Forget_Paswword extends StatefulWidget {
   const Forget_Paswword({Key? key}) : super(key: key);
@@ -40,13 +37,10 @@ class _Forget_PaswwordState extends State<Forget_Paswword> {
   _emailvalidator(value) {
     if (value!.isEmpty) {
       print("Email is empty");
-
-      return "Veuillez entrer votre adresse e-mail";
+      return T.of(context)!.enter_email;
     } else if (!EmailValidator.validate(value)) {
-      return "Veuillez utiliser un Email valide";
+      return T.of(context)!.use_valid_email;
     } else {
-      _useremail = value;
-      print("Email is " + _useremail);
       return null;
     }
   }
@@ -66,7 +60,7 @@ class _Forget_PaswwordState extends State<Forget_Paswword> {
                   children: [
                     Noly_logo(),
                     Sized_Box(19),
-                    Headline("Vérification d'e-mail"),
+                    Headline(T.of(context)!.l_fp_headline),
                     Sized_Box(10),
                     Container(
                       height: 108,
@@ -78,7 +72,7 @@ class _Forget_PaswwordState extends State<Forget_Paswword> {
                           useremail_controller),
                     ),
                     Sized_Box(17),
-                    Button_wide(goto, 'Envoyer code de vérification'),
+                    Button_wide(goto, T.of(context)!.l_fp_sendverification),
                     Sized_Box(50),
                   ],
                 ),

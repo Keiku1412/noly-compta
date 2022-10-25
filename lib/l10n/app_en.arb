@@ -1,17 +1,35 @@
 {
     "language":"English",
-    "@language":{
-        "description": "The current Language"
-    },
-    "helloWorld": "Hello World!",
-    "@helloWorld":{
-        "description": "A programmer greeting"
-    },
-    "conexion":"Connexion",
+    "connection":"Connection",
     "sub_title_login":"Enter your email and password to access your Noly account",
     "create_account":"Create an account",
     "email":"E-mail",
     "password":"Password",
     "log_in":"Sign In",
-    "forgetpassword":"Forgot your password?"
+    "forgetpassword":"Forgot your password?",
+
+    "enter_email":"Please enter your email address",
+    "use_valid_email":"Please use a valid email address",
+    "enter_password":"Please enter your password",
+    "use_valid_password":"Password must contain 1 character: special, upper case, number",
+   
+    "api_no_user_found":"No users found",
+    "api_password_not_valid":"Invalid password",
+
+    "l_fp_sendverification":"Send verification code",
+    "l_fp_headline":"Email verification",
+
+    "l_cv_headline":"Check the code in your e-mail address",
+    "l_cv_delete_all":"Delete all",
+    "l_cv_enter_full_code":"Please enter the full code",
+    "l_cv_confirm":"Confirm",
+    "l_cv_your_code": "your code: ",
+
+    "l_pv_recover_password":"Recover my password",
+    "l_pv_subtitle":"Please set up your new password",
+    "l_pv_new_password":"New password",
+    "l_pv_confirm_password":"Confirm your password",
+    "l_pv_same_password":"Please use the same password",
+    "l_pv_change_password":"Change password"
+    
 }

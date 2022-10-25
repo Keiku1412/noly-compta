@@ -1,12 +1,10 @@
-import 'package:nolycompta/constant/const.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:nolycompta/Screens/Home/Home.dart';
 import 'dart:convert';
-import 'package:another_flushbar/flushbar.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../constant/snackbar.dart';
 
 Future login_api(user, pass, saved_data, context) async {
@@ -28,9 +26,9 @@ Future login_api(user, pass, saved_data, context) async {
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => Home()));
   } else if (data['message'] == 'No User found') {
-    Custom_snackbar(context, 'Aucun utilisateur trouvé');
+    Custom_snackbar(context, T.of(context)!.api_no_user_found);
   } else if (data['message'] == 'password unvalid') {
-    Custom_snackbar(context, 'Mot de passe non valide');
+    Custom_snackbar(context, T.of(context)!.api_password_not_valid);
   }
 }
 

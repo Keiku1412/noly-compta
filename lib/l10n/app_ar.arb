@@ -1,10 +1,27 @@
 {
     "language":"العربية",
-    "conexion":"الارتباط",
+    "connection":"الارتباط",
     "sub_title_login":"'Noly'أدخل بريدك الإلكتروني وكلمة المرور للوصول إلى حسابك",
     "create_account":"انشئ حساب",
     "email":"البريد الإلكتروني",
     "password":"كلمة المرور ",
     "log_in":"تسجيل الدخول",
-    "forgetpassword":"نسيت كلمة المرور"
+    "forgetpassword":"نسيت كلمة المرور",
+
+    "enter_email":"الرجاء إدخال عنوان البريد الإلكتروني الخاص بك",
+    "use_valid_email":"يرجى استخدام عنوان بريد إلكتروني صالح",
+    "enter_password":"من فضلك أدخل رقمك السري",
+    "use_valid_password":"يجب أن تحتوي كلمة المرور على حرف واحد: خاص ، كبير ، رقم",
+   
+    "api_no_user_found":"لم يتم العثور على مستخدمين",
+    "api_password_not_valid":"رمز مرور خاطئ",
+
+    "l_fp_sendverification":"أرسل رمز التحقق",
+    "l_fp_headline":"تأكيد بواسطة البريد الالكتروني",
+
+    "l_cv_headline":"تحقق من الرمز الموجود في عنوان بريدك الإلكتروني",
+    "l_cv_delete_all":"حذف الكل",
+    "l_cv_enter_full_code":"الرجاء إدخال الرمز الكامل",
+    "l_cv_confirm":"أكد"
 }
+

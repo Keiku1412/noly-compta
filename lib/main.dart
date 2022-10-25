@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         supportedLocales: L10n.all,
         localizationsDelegates: [
-          AppLocalizations.delegate,
+          T.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,

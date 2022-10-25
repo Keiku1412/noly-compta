@@ -1,10 +1,33 @@
 {
     "language":"Deutsch",
-    "conexion":"Verbindung",
+    "connection":"Verbindung",
     "sub_title_login":"Geben Sie Ihre E-Mail-Adresse und Ihr Passwort ein, um auf Ihr Noly-Konto zuzugreifen",
     "create_account":"Ein Konto erstellen",
     "email":"E-mail",
     "password":"Passwort",
     "log_in":"Einloggen",
-    "forgetpassword":"Haben Sie Ihr Passwort vergessen?"
+    "forgetpassword":"Haben Sie Ihr Passwort vergessen?",
+
+    "enter_email":"Voer uw e-mailadres in",
+    "use_valid_email":"Gebruik een geldig e-mailadres",
+    "enter_password":"Voer uw wachtwoord in",
+    "use_valid_password":"Wachtwoord moet 1 karakter bevatten: speciaal, hoofdletter, cijfer",
+   
+    "api_no_user_found":"Geen gebruikers gevonden",
+    "api_password_not_valid":"Ongeldig wachtwoord",
+
+    "l_fp_sendverification":"Verificatiecode verzenden",
+    "l_fp_headline":"E-mail verificatie",
+
+    "l_cv_headline":"Controleer de code in uw e-mailadres",
+    "l_cv_delete_all":"Alles verwijderen",
+    "l_cv_enter_full_code":"Voer de volledige code in",
+    "l_cv_confirm":"Bevestig",
+
+    "l_pv_recover_password":"Mijn wachtwoord herstellen",
+    "l_pv_subtitle":"Stel uw nieuwe wachtwoord in",
+    "l_pv_new_password":"Nieuw wachtwoord",
+    "l_pv_confirm_password":"Confirm your password",
+    "l_pv_same_password":"Gebruik hetzelfde wachtwoord",
+    "l_pv_change_password":"Wachtwoord wijzigen"
 }

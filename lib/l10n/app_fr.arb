@@ -1,11 +1,34 @@
 {
     "language":"French",
-    "conexion":"Connexion",
+    "connection":"Connexion",
     "sub_title_login":"Entrez votre email et votre mot de passe pour accéder à votre compte Noly",
     "create_account":"Créez un compte",
     "email":"E-mail",
     "password":"Mot de passe",
     "log_in":"Se connecter",
-    "forgetpassword":"Mot de passe oublié ?"
+    "forgetpassword":"Mot de passe oublié ?",
+
+    "enter_email":"Veuillez entrer votre adresse e-mail",
+    "use_valid_email":"Veuillez utiliser un Email valide",
+    "enter_password":"Veuillez entrer votre mot de passe",
+    "use_valid_password":"Mot de passe doit contenir 1 caractère: spécial, majuscule, chiffre",
+   
+    "api_no_user_found":"Aucun utilisateur trouvé",
+    "api_password_not_valid":"Mot de passe non valide",
+
+    "l_fp_sendverification":"Envoyer code de vérification",
+    "l_fp_headline":"Vérification d'e-mail",
+    
+    "l_cv_headline":"Vérifiez le code dans votre adresse e-mail",
+    "l_cv_delete_all":"Supprimer tout",
+    "l_cv_enter_full_code":"Veuillez entrer le code complet",
+    "l_cv_confirm":"Confirmer",
+
+    "l_pv_recover_password":"Récupérer mon mot de passe",
+    "l_pv_subtitle":"Veuillez configurer votre nouveau mot de passe",
+    "l_pv_new_password":"Nouveau mot de passe",
+    "l_pv_confirm_password":"Confirmez votre mot de passe",
+    "l_pv_same_password":"Veuillez utiliser le même mot de passe",
+    "l_pv_change_password":"Changer le mot de passe"
     
 }
