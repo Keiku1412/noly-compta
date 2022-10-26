@@ -18,6 +18,16 @@ var cards_decoration = BoxDecoration(
         offset: Offset(-6, 0))
   ],
 );
+var cards_decoration_3 = BoxDecoration(
+  borderRadius: BorderRadius.all(Radius.circular(35)),
+  boxShadow: [
+    BoxShadow(
+        color: fadebluecol,
+        blurRadius: 50.0,
+        spreadRadius: -30,
+        offset: Offset(-15, 15))
+  ],
+);
 
 class Sized_Box extends StatelessWidget {
   final double x;

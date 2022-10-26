@@ -12,7 +12,7 @@ class Cards_AC extends StatelessWidget {
     return Container(
       decoration: cards_decoration,
       // padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-      height: 109,
+      height: 104,
       width: MediaQuery.of(context).size.width -
           MediaQuery.of(context).size.width / 8,
       child: Card(
@@ -47,6 +47,83 @@ class Cards_AC extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class Cards_AC_3 extends StatelessWidget {
+  final String title;
+  final String image;
+
+  Cards_AC_3(
+    this.title,
+    this.image,
+  );
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Center(
+          child: Container(
+            padding: EdgeInsets.only(
+              top: 25,
+            ),
+            decoration: cards_decoration_3,
+            height: 400,
+            width: MediaQuery.of(context).size.width -
+                MediaQuery.of(context).size.width / 8,
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        width: 150,
+                        child: Text(
+                          title,
+                          maxLines: 3,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'DemiBold',
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        padding: EdgeInsets.all(5),
+                        width: 50,
+                        child: Text(
+                          "hiiiii",
+                          maxLines: 3,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'DemiBold',
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        /*  Align(
+          alignment: Alignment.topCenter,
+          child: Image.asset(
+            image,
+            width: 100,
+            height: 70,
+            alignment: Alignment.center,
+          ),
+        ),*/
+      ],
     );
   }
 }
