@@ -78,6 +78,100 @@ class Cards_AC_3 extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  Sized_Box(25),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        width: MediaQuery.of(context).size.width / 1.45,
+                        child: Text(
+                          "L'association est-elle reconnue d'utilité publique?",
+                          maxLines: 3,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Medium',
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        padding: EdgeInsets.all(20),
+                        width: 60,
+                        child: Text(
+                          "hii",
+                          maxLines: 3,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'Medium',
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(20),
+                        width: MediaQuery.of(context).size.width / 1.45,
+                        child: Text(
+                          "L'association émet-elle\ndes valeurs mobilières de placement ?",
+                          maxLines: 3,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Medium',
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        padding: EdgeInsets.all(5),
+                        width: 50,
+                        child: Text(
+                          "hiiiii",
+                          maxLines: 3,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'DemiBold',
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        width: 150,
+                        child: Text(
+                          title,
+                          maxLines: 3,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'DemiBold',
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        padding: EdgeInsets.all(5),
+                        width: 50,
+                        child: Text(
+                          "hiiiii",
+                          maxLines: 3,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'DemiBold',
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   Row(
                     children: [
                       Container(
@@ -114,7 +208,7 @@ class Cards_AC_3 extends StatelessWidget {
             ),
           ),
         ),
-        /*  Align(
+        Align(
           alignment: Alignment.topCenter,
           child: Image.asset(
             image,
@@ -122,7 +216,7 @@ class Cards_AC_3 extends StatelessWidget {
             height: 70,
             alignment: Alignment.center,
           ),
-        ),*/
+        ),
       ],
     );
   }

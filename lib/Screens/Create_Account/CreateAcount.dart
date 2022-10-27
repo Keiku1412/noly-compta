@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:nolycompta/constant/cards.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:nolycompta/constant/const.dart';
 import 'package:nolycompta/constant/headline.dart';
@@ -78,13 +79,13 @@ class _Create_Account1 extends State<Create_Account1> {
                             key: Key('1'),
                             children: [
                               Sized_Box(12),
-                              Cards_AC('Ma structure existe',
+                              Cards_AC(T.of(context)!.ca_card_1_1,
                                   'assets/images/logos/1_1.png', _next_card),
                               Sized_Box(95),
-                              Cards_AC("Je n'ai pas de\nstructure existante",
+                              Cards_AC(T.of(context)!.ca_card_1_2,
                                   'assets/images/logos/1_2.png', _next_card),
                               Sized_Box(95),
-                              Cards_AC('Je suis une \nmicro-entreprise',
+                              Cards_AC(T.of(context)!.ca_card_1_3,
                                   'assets/images/logos/1_3.png', _next_card),
                             ],
                           );

@@ -29,5 +29,15 @@
     "l_pv_new_password":"Nueva contraseña",
     "l_pv_confirm_password":"Confirme su contraseña",
     "l_pv_same_password":"Por favor, utilice la misma contraseña",
-    "l_pv_change_password":"Cambiar contraseña"
+    "l_pv_change_password":"Cambiar contraseña",
+
+    "ca_card_1_1":"Mi estructura existe",
+    "ca_card_1_2":"No tengo una\nestructura existente",
+    "ca_card_1_3":"Soy una\nmicroempresa",
+
+    "ca_card_2_1":"Asociación",
+    "ca_card_2_2":"Empresa comercial",
+    "ca_card_2_3":"Empresa individual\n(EIRL) y profesión liberal",
+    "ca_card_2_4":"Sociedad civil",
+    "ca_card_2_5":"Comité de Empresa"
 }

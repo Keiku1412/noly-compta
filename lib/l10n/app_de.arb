@@ -29,5 +29,15 @@
     "l_pv_new_password":"Nieuw wachtwoord",
     "l_pv_confirm_password":"Confirm your password",
     "l_pv_same_password":"Gebruik hetzelfde wachtwoord",
-    "l_pv_change_password":"Wachtwoord wijzigen"
+    "l_pv_change_password":"Wachtwoord wijzigen",
+
+    "ca_card_1_1":"Mijn structuur bestaat",
+    "ca_card_1_2":"Ik heb geen\nbestaande structuur",
+    "ca_card_1_3":"Ik ben een\nmicro-onderneming",
+
+    "ca_card_2_1":"Vereniging",
+    "ca_card_2_2":"Commerciële onderneming",
+    "ca_card_2_3":"Eenmanszaak (EIRL)\nen vrij beroep",
+    "ca_card_2_4":"Burgermaatschappij",
+    "ca_card_2_5":"Ondernemingsraad"
 }

@@ -29,6 +29,16 @@
     "l_pv_new_password":"Nouveau mot de passe",
     "l_pv_confirm_password":"Confirmez votre mot de passe",
     "l_pv_same_password":"Veuillez utiliser le même mot de passe",
-    "l_pv_change_password":"Changer le mot de passe"
+    "l_pv_change_password":"Changer le mot de passe",
+
+    "ca_card_1_1":"Ma structure existe",
+    "ca_card_1_2":"Je n'ai pas de\nstructure existante",
+    "ca_card_1_3":"Je suis une\nmicro-entreprise",
+
+    "ca_card_2_1":"Association",
+    "ca_card_2_2":"Commercial company",
+    "ca_card_2_3":"Sole proprietorship\n(EIRL) and liberal profession",
+    "ca_card_2_4":"Civil society",
+    "ca_card_2_5":"Works Council"
     
 }
