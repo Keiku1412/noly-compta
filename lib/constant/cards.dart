@@ -147,7 +147,7 @@ class Cards_AC_3 extends StatelessWidget {
                         padding: EdgeInsets.all(5),
                         width: 150,
                         child: Text(
-                          title,
+                          'L\'association est-elle reconnue d\'utilité publique?',
                           maxLines: 3,
                           textAlign: TextAlign.left,
                           style: TextStyle(

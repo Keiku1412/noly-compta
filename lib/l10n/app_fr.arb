@@ -36,9 +36,9 @@
     "ca_card_1_3":"Je suis une\nmicro-entreprise",
 
     "ca_card_2_1":"Association",
-    "ca_card_2_2":"Commercial company",
-    "ca_card_2_3":"Sole proprietorship\n(EIRL) and liberal profession",
-    "ca_card_2_4":"Civil society",
-    "ca_card_2_5":"Works Council"
+    "ca_card_2_2":"Société commerciale",
+    "ca_card_2_3":"Entreprise individuelle\n(EIRL) et profession libérale",
+    "ca_card_2_4":"Société civile",
+    "ca_card_2_5":"Comité d'entreprise"
     
 }
