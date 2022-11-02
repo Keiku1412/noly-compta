@@ -39,6 +39,18 @@
     "ca_card_2_2":"Société commerciale",
     "ca_card_2_3":"Entreprise individuelle\n(EIRL) et profession libérale",
     "ca_card_2_4":"Société civile",
-    "ca_card_2_5":"Comité d'entreprise"
+    "ca_card_2_5":"Comité d'entreprise",
+
+    "ca_card_3_1":"L'association est-elle reconnue d'utilité publique?",
+    "ca_card_3_2":"L'association émet-elle des valeurs mobilières de placement ?",
+    "ca_card_3_3":"L'association reçoit-elle plus de 153 000 € de subventions par an ?",
+    "ca_card_3_4":"L'association exerce-t-elle une activité économique?",
+    "next":"Suivant",
+
+    "ca_card_4_parmois":"par mois",
+    "ca_card_4_1_discription":"Description 1",
+    "ca_card_4_2_discription":"Description 2",
+    "ca_card_4_terms":"Je reconnais avoir pris connaissance des conditions générales de vente"
+
     
 }

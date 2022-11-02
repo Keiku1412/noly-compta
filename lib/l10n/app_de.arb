@@ -39,5 +39,16 @@
     "ca_card_2_2":"Commerciële onderneming",
     "ca_card_2_3":"Eenmanszaak (EIRL)\nen vrij beroep",
     "ca_card_2_4":"Burgermaatschappij",
-    "ca_card_2_5":"Ondernemingsraad"
+    "ca_card_2_5":"Ondernemingsraad",
+
+    "ca_card_3_1":"Is de vereniging van openbaar nut?",
+    "ca_card_3_2":"Geeft de vereniging beleggingseffecten uit?",
+    "ca_card_3_3":"Ontvangt de vereniging meer dan 153.000 euro aan subsidies per jaar?",
+    "ca_card_3_4":"Oefent de vereniging een economische activiteit uit?",
+    "next":"Volgende",
+
+    "ca_card_4_parmois":"per maand",
+    "ca_card_4_1_discription":"Description 1",
+    "ca_card_4_2_discription":"Description 2",
+    "ca_card_4_terms":"Ik bevestig dat ik de algemene verkoopvoorwaarden heb gelezen"
 }

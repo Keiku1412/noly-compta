@@ -157,7 +157,7 @@ class _LoginState extends State<Login> {
                     Container(
                       height: 108,
                       child: Text_Field(
-                          'E-mail',
+                          T.of(context)!.email,
                           'assets/images/icons/E-mail.png',
                           false,
                           _emailvalidator,
@@ -166,7 +166,7 @@ class _LoginState extends State<Login> {
                     Container(
                       height: 108,
                       child: Text_Field(
-                          'Mot de passe',
+                          T.of(context)!.password,
                           'assets/images/icons/Password.png',
                           true,
                           _passwordvalidator,

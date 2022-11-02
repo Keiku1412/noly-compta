@@ -39,7 +39,6 @@ class Progress_Bar_AC extends StatelessWidget {
     return Align(
       alignment: Alignment.center,
       child: Container(
-        // color: Colors.red,
         width: 250,
         height: 20,
         child: Stack(

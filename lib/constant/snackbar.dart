@@ -12,9 +12,8 @@ Future Custom_snackbar(BuildContext context, title) {
     messageText: Text(
       title,
       textAlign: TextAlign.center,
-      style: TextStyle(fontSize: 16, fontFamily: 'DemiBold', color: Colors.white
-          // color: Color(0xffB0B0B0),
-          ),
+      style:
+          TextStyle(fontSize: 16, fontFamily: 'DemiBold', color: Colors.white),
     ),
     margin: EdgeInsets.only(
       left: 60,

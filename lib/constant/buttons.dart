@@ -50,3 +50,53 @@ class Button_wide extends StatelessWidget {
     );
   }
 }
+
+class Button_short extends StatelessWidget {
+  final String title;
+  final Function x;
+  Button_short(this.x, this.title);
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(41, 0, 41, 0),
+      child: SizedBox(
+        height: 48.5,
+        width: 180,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: fadebluecol,
+                blurRadius: 30,
+                spreadRadius: 0.5,
+                offset: Offset(0, 12),
+              ),
+            ],
+          ),
+          child: ElevatedButton(
+            onPressed: () {
+              x();
+            },
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: 22,
+                fontFamily: 'DemiBold',
+              ),
+            ),
+            style: ElevatedButton.styleFrom(
+              shadowColor: fadebluecol,
+              foregroundColor: Colors.white,
+              backgroundColor: greencol,
+              elevation: 15,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25), // <-- Radius
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

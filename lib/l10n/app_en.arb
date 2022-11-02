@@ -31,7 +31,7 @@
     "l_pv_confirm_password":"Confirm your password",
     "l_pv_same_password":"Please use the same password",
     "l_pv_change_password":"Change password",
-
+    
     "ca_card_1_1":"My structure exists",
     "ca_card_1_2":"I do not have an\nexisting structure",
     "ca_card_1_3":"I am a\nmicro-business",
@@ -40,7 +40,18 @@
     "ca_card_2_2":"Commercial company",
     "ca_card_2_3":"Sole proprietorship\n(EIRL) and liberal profession",
     "ca_card_2_4":"Civil society",
-    "ca_card_2_5":"Works Council"
+    "ca_card_2_5":"Works Council",
+
+    "ca_card_3_1":"Is the association of public utility?",
+    "ca_card_3_2":"Does the association issue investment securities?",
+    "ca_card_3_3":"Does the association receive more than €153,000 in grants per year?",
+    "ca_card_3_4":"Does the association carry out an economic activity?",
+    "next":"Next",
+
+    "ca_card_4_parmois":"per month",
+    "ca_card_4_1_discription":"Description 1",
+    "ca_card_4_2_discription":"Description 2",
+    "ca_card_4_terms":"I acknowledge that I have read the general conditions of sale"
 
     
 }
